@@ -18,10 +18,10 @@ public class Monster extends Creature{
     public String toString() {
         String myReturn = this.getClassName();
         myReturn += " [mode=" + this.mode;
-        myReturn += ", hitPoints=" + this.getHitPoints();
-        myReturn += ", attackPoints=" + this.getAttackPoints();
-        myReturn += ", gold=" + this.getGold();
-        myReturn += ", alive=" + this.isAlive() + "]";
+        myReturn += ", hitPoints=" + this.hitPoints;
+        myReturn += ", attackPoints=" + this.attackPoints;
+        myReturn += ", gold=" + this.gold;
+        myReturn += ", alive=" + this.alive + "]";
         return myReturn;
     }//end toString()
 
