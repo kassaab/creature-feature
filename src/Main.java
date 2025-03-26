@@ -7,8 +7,15 @@ public class Main {
         Hero myHero = new Hero("Hero",23,5,0,"Conan","Barbarian");
         Monster myMonster = new Monster("Dragon",12,10,200,"fierce");
         boolean gameOn = true; //continue until someone's is dead
+        int counter = 0;
 
         while (gameOn){
+            if (counter % 2 == 0) {// hero attacks
+                System.out.println(myMonster.defends(myHero.attacks()));
+            } else {// monster attacks
+                System.out.println(myHero.defends(myMonster.attacks()));
+            }
+
             if(!myMonster.isAlive() || !myHero.isAlive()){//someone's dead, game over!
                 if(myHero.isAlive()) {//time for gold!
                     myHero.setGold(myHero.getGold() + myMonster.getGold());
@@ -18,13 +25,11 @@ public class Main {
 
                 gameOn = false;
                 break;
-            }else{//continue
-                System.out.println(myHero.defends(myMonster.attacks()));
-                System.out.println(myMonster.defends(myHero.attacks()));
-                Thread.sleep(1000);
             }
+            counter++;
+            Thread.sleep(1000);
 
-        }
+        }//end whiile
 
     }//end constructor
 }//end Main
